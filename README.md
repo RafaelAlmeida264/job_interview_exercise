@@ -83,7 +83,7 @@ To test data validation on the form:
 
 Finally, create a new aiport just so we have three listed airports (IATA: "OPO", Name: "Francisco Sá Carneiro Airport"). You can refresh the page in your browser to see that those three airports are still listed (since they are saved and retrieved from LocalStorage).
 
-**Step 2) Update an airport's data**
+**Step 2) Update an airport's data**<br>
 To edit the data:
 
 - move the cursor over an item in the list, for example the first one ("LIS, Lisbon Airport");
@@ -91,7 +91,7 @@ To edit the data:
 - now type in the new information for this airport: "LIS" for IATA, and "Aeroporto Internacional Humberto Delgado";
 - when you confirm, that data has been updated in the list, and if you refresh the browser, you can see that the new data is still there.
 
-**Step 3) Delete an airport**
+**Step 3) Delete an airport**<br>
 To delete an airport from the list:
 
 - move the cursor over an item in the list, for example the second one ("LHR, London Heathrow Airport");
@@ -106,7 +106,7 @@ To delete an airport from the list:
 
 NOTE: Obviously, there is no airport listed with that IATA. In reality, I'm only checking the IATA with a list of hardcoded IATAs (["ABC", "BCD", "CDE"]) and not with the actual list of IATAs of the airports already created. I just wanted to check the design of a warning message (not an error message). In a real situation, if the IATA serves as the unique identifier (ID) of an airport, I assume that you can't create a new airport if that ID already exists. But in this case, I don't prevent the user from creating an airport with a repeated IATA.
 
-**[Additional Step] Step 5) Feedback message**
+**[Additional Step] Step 5) Feedback message**<br>
 I created a feedback message (described below in the "Created Components" chapter), but I didn't use it in the application. It is present in the code, inside a comment. I thought it should be important to have something like this when the user successfully completes the creation or deletion of ain airport but I preferred to just follow the exercise script.
 
 To see what the Feedback Message looks like:
@@ -114,3 +114,28 @@ To see what the Feedback Message looks like:
 - go to the "App.vue" file and remove the comment from the line 12;
 - the feedback message will now appear in the browser, under the list of airports, just as I had planned before.
 - but since I ended up not using this component, we can leave this line of code as a comment.
+
+### Created Components
+
+For this application, I created the following components:
+
+- Button.vue:
+  There are three types of buttons in the application: a button with icon (used to add a new aiport to the list), a primary action button (used to confirm the creation of a new airport, to confirm the update of data for a specific airport, or to cancel the request to delete an airport), and a secondary action button (used to cancel the request to create an airport or update its data, or to confirm the request to delete an airport).
+
+- Form.vue:
+  There are two types of forms: one for creating an airport and another for updating an airport's data. The only difference between them is the tile, "Insert New Airport" and "Update Airport Data", and the fact that I supply an airport (from the list of airports) when I need to update its information.<br>
+  The form has two inputs, one for IATA and one for Name. It also has two buttons, one to cancel and one to confirm the operation. Finally, it has its own area to list all the error messages when validating the data.<br>
+  With regard to the error messages, I chose to show them only after the user clicks the "Confirm" button for the first time. After that, they appear and disappear as the user types something into the input boxes. Out of personal preference, I don't think it would be right to show the error messages as soon as the user opens the popup and/or starts typing something.<br>
+  I confess that I didn't do something I would have liked to have done: although the data update is working, when the popup is opened it doesn't show the user the old data for the respective airport. That said, the user is obliged to enter all the data (although in this case there are only two) if they only want to change one of them - which shouldn't happen!
+
+- List.vue:
+  The list has a header with the number of airports created, and a list with as many items as there are airports. When creating a new list, I provide the list of airports already created (or an empty list if none exists yet) stored in LocalStorage.
+
+- ListItem.vue:
+  A list item corresponds to an airport with two pieces of information (IATA and Name), separated by a comma. When creating a new item, I supply an airport from the list of airports (which already contains the required data). When the cursor hovers an item, it is highlighted and displays two new buttons, one to edit the information of the respective airport, and the other to delete it from the list.
+
+- DeletePopup.vue:
+  This popup is just a Yes/No form with two buttons to confirm/cancel the request to delete a selected airport.
+
+- Feedback.vue:
+  Note: I created this sixth component as something additional to what was requested in the exercise. However, it is not executed during the application. I believe there should be an alert message (in shades of green, for example) when the user successfully completes the creation of a new airport and when they remove an airport from the list. Likewise, when something goes wrong, a similar message (in shades of red) should also appear (this last design is not present in the code).
