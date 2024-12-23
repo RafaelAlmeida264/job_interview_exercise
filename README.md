@@ -9,7 +9,7 @@ This project was developed using [Vue 3](https://vuejs.org/guide/quick-start.htm
 ## Recommended IDE Setup
 
 Download or clone this project to your computer.
-Open the project folder using your preferred IDE. Personally, I used [Visual Studio Code](https://code.visualstudio.com/).
+<br>Open the project folder using your preferred IDE.Personally, I used [Visual Studio Code](https://code.visualstudio.com/).
 
 <!--
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
@@ -23,8 +23,8 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 
-Versions used during this project:
-npm: 10.9.2
+Versions used during this project:<br>
+npm: 10.9.2<br>
 Node.js: v20.13.1
 
 To install the latest version of npm, please type the following command in the terminal:
