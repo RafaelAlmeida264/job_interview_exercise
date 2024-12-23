@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+:root {
+    --white: #FFFFFF;
+    --navy_blue: #21346F;
+
+    --dark_text: #1E1E1E;
+
+    --dark_grey: #363340;
+    --dark_grey_rgb: 54, 51, 64;
+    --grey: #57555e;
+    --light_grey: #D9D9D9;
+
+    --light_green: #C9E9CE;
+    --dark_green: #1B4330;
+
+    --warning_red: #4F0F0F;
+    
+    --font_weight_medium: 500;
+
+    /* Adicional Feature: did not use at the end */
+    --turquoise: #009899;
+    --gradient: linear-gradient(var(--turquoise), var(--white));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Serif", sans-serif;
+}
+
