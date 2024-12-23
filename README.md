@@ -54,7 +54,7 @@ npm run build
 
 ## Project Description
 
-The application displays a list of airports and a button to add a new airport to the list. A list is made up of several airports (each airport corresponds to a different item). When you want to add a new airport or update the data of an airport that has already been created, a popup appears with a form to fill in. When you want to delete an airport from the list, a small confirmation popup appears before the airport is removed.<br><br>
+The application displays a list of airports and a button to add a new airport to the list. A list is made up of several airports (each airport corresponds to a different item). When you want to add a new airport or update the data of an airport that has already been created, a popup appears with a form to fill in. When you want to delete an airport from the list, a small confirmation popup appears before the airport is removed.<br>
 
 All these operations (Create, Read, Update and Delete) are working.
 
@@ -64,9 +64,23 @@ All these operations (Create, Read, Update and Delete) are working.
 As soon as the application starts, you can see a button to insert a new airport and the header of the list of airports. Since there is no airport created (and saved in LocalStorage), the list will not show any airports and the header should say that there are "0 Airports listed".
 
 **Step 1) Create a new airport**<br>
-To create a new airport:<br>
+To create a new airport:
 
 - click on the "Insert New Airport" button;
 - type the following data into the form: "LIS" for the IATA and "Lisbon Airport" for the Airport Name;
 - click on the "Confirm" button to create a new airport;
 - the new airport will now appear listed and the list header will have its information updated ("1 Airport listed").
+
+To test data validation on the form:
+
+- click on the "Insert New Airport" button;
+- this time, leave both inputs empty;
+- click on the "Confirm" button: three error messages should appear;
+- type "123" in IATA: the message about the length of the string should not appear;
+- type "LH" in IATA: the alphabetic character message should not appear;
+- type "LHR" in IATA: only the message about both parameters being mandatory is shown;
+- type "London Heathrow Airport" in the Name input and confirm: a new airport is added to the list and the list header is now updated.
+
+Finally, create a new aiport just so we have three listed airports (IATA: "OPO", Name: "Francisco Sá Carneiro Airport"). You can refresh the page in your browser to see that those three airports are still listed (since they are saved and retrieved from LocalStorage).
+
+**Step 2) Update an airport's data **
