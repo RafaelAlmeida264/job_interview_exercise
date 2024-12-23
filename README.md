@@ -83,4 +83,34 @@ To test data validation on the form:
 
 Finally, create a new aiport just so we have three listed airports (IATA: "OPO", Name: "Francisco Sá Carneiro Airport"). You can refresh the page in your browser to see that those three airports are still listed (since they are saved and retrieved from LocalStorage).
 
-**Step 2) Update an airport's data **
+**Step 2) Update an airport's data**
+To edit the data:
+
+- move the cursor over an item in the list, for example the first one ("LIS, Lisbon Airport");
+- click on the icon that corresponds to Edit;
+- now type in the new information for this airport: "LIS" for IATA, and "Aeroporto Internacional Humberto Delgado";
+- when you confirm, that data has been updated in the list, and if you refresh the browser, you can see that the new data is still there.
+
+**Step 3) Delete an airport**
+To delete an airport from the list:
+
+- move the cursor over an item in the list, for example the second one ("LHR, London Heathrow Airport");
+- click on the icon that corresponds to Delete;
+- a confirmation popup should appear: select "No" if you want to cancel the operation, or select "Yes" to proceed with removing the item from the list.
+- selecting "Yes", you can see that the airport has been deleted, the list header is updated and, when you refresh the browser, you can see that only two airports are present (the deleted airport no longer exists).
+
+**[Additional Step] Step 4) Create an airport with an existing IATA**
+
+- create a new airport by typing "ABC" in the IATA input;
+- a new alert message written in green should appeared: this message only warns the user that an airport with this respective IATA already exists.
+
+NOTE: Obviously, there is no airport listed with that IATA. In reality, I'm only checking the IATA with a list of hardcoded IATAs (["ABC", "BCD", "CDE"]) and not with the actual list of IATAs of the airports already created. I just wanted to check the design of a warning message (not an error message). In a real situation, if the IATA serves as the unique identifier (ID) of an airport, I assume that you can't create a new airport if that ID already exists. But in this case, I don't prevent the user from creating an airport with a repeated IATA.
+
+**[Additional Step] Step 5) Feedback message**
+I created a feedback message (described below in the "Created Components" chapter), but I didn't use it in the application. It is present in the code, inside a comment. I thought it should be important to have something like this when the user successfully completes the creation or deletion of ain airport but I preferred to just follow the exercise script.
+
+To see what the Feedback Message looks like:
+
+- go to the "App.vue" file and remove the comment from the line 12;
+- the feedback message will now appear in the browser, under the list of airports, just as I had planned before.
+- but since I ended up not using this component, we can leave this line of code as a comment.
